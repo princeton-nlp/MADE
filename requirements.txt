@@ -1,0 +1,4 @@
+adapter-transformers==2.1.2
+numpy
+torch==1.9.0
+tqdm
