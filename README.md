@@ -16,6 +16,7 @@ MADE combines a shared Transformer with six adapters that are specialized to dif
   * [Train](#train)
   * [Evaluate](#evaluate)
   * [Transfer](#transfer)
+* [Bugs or questions?](#bugs-or-questions)
 * [Citation](#citation)
 
 
@@ -223,9 +224,12 @@ python run.py \
     --name "transfer/made_preaverage/BioASQ/64"
 ```
 
+# Bugs or questions?
+
+If you have any questions related to the code or the paper, feel free to email Dan Friedman (`dfriedman@cs.princeton.edu`). If you encounter any problems when using the code, or want to report a bug, you can open an issue. Please try to specify the problem with details so we can help you better and quicker!
+
 # Citation
 
-To cite the paper:
 ```bibtex
 @inproceedings{friedman2021single,
    title={Single-dataset Experts for Multi-dataset QA},
