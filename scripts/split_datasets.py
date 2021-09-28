@@ -12,7 +12,7 @@ def parse_args():
     parser.add_argument("--dev_size", type=int, default=400)
     parser.add_argument(
         "--seed",
-        description="The splits in the paper were created with seed=13",
+        help="The splits in the paper were created with seed=13",
         type=int,
         default=13,
     )
