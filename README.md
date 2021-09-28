@@ -128,7 +128,7 @@ A single fine-tuned model:
 ```sh
 python run.py \
     --eval_on BioASQ DROP DuoRC RACE RelationExtraction TextbookQA \
-    --load_from MADE/multi_dataset_ft \
+    --load_from multi_dataset_ft \
     --output_dir output/zero_shot/multi_dataset_ft
 ```
 
@@ -136,8 +136,8 @@ An individual MADE adapter (e.g. SQuAD):
 ```sh
 python run.py \
     --eval_on BioASQ DROP DuoRC RACE RelationExtraction TextbookQA \
-    --load_from MADE/made_transformer \
-    --load_adapters_from MADE/made_tuned_adapters \
+    --load_from made_transformer \
+    --load_adapters_from made_tuned_adapters \
     --adapter \
     --adapter_name SQuAD \
     --output_dir output/zero_shot/made_tuned_adapters/SQuAD
@@ -159,8 +159,8 @@ parallel](https://docs.adapterhub.ml/adapter_composition.html#parallel).
 ```sh
 python run.py \
     --eval_on BioASQ DROP DuoRC RACE RelationExtraction TextbookQA \
-    --load_from MADE/made_transformer \
-    --load_adapters_from MADE/made_tuned_adapters \
+    --load_from made_transformer \
+    --load_adapters_from made_tuned_adapters \
     --adapter_names SQuAD HotpotQA TriviaQA SearchQA NewsQA NaturalQuestions \
     --made \
     --parallel_adapters  \
@@ -171,8 +171,8 @@ Averaging the parameters of the MADE adapters:
 ```sh
 python run.py \
     --eval_on BioASQ DROP DuoRC RACE RelationExtraction TextbookQA \
-    --load_from MADE/made_transformer \
-    --load_adapters_from MADE/made_tuned_adapters \
+    --load_from made_transformer \
+    --load_adapters_from made_tuned_adapters \
     --adapter_names SQuAD HotpotQA TriviaQA SearchQA NewsQA NaturalQuestions \
     --adapter \
     --average_adapters  \
@@ -219,8 +219,8 @@ python run.py \
     --negative_examples \
     --save \
     --seeds 7 19 29 \
-    --load_from "MADE/made_transformer" \
-    --load_adapters_from "MADE/made_tuned_adapters" \
+    --load_from "made_transformer" \
+    --load_adapters_from "made_tuned_adapters" \
     --name "transfer/made_preaverage/BioASQ/64"
 ```
 
