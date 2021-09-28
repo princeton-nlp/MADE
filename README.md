@@ -1,4 +1,4 @@
-# MADE (**M**ulti-**a**dapter **d**ataset **e**xperts)
+# MADE (**M**ulti-**A**dapter **D**ataset **E**xperts)
 
 This repository contains the implementation of MADE
 (**M**ulti-**a**dapter **d**ataset **e**xperts), which is described in
