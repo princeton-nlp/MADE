@@ -341,48 +341,6 @@ def set_seed(seed):
     torch.manual_seed(seed)
 
 
-def get_datasets(args, tokenizer):
-    train_datasets = []
-    for dataset in args.train_on:
-        train_dataset = data_utils.load_dataset(
-            dataset,
-            "train",
-            tokenizer,
-            max_examples=args.max_train_examples,
-            negative_examples=args.negative_examples or args.few_shot,
-            overwrite_cache=args.overwrite_cache,
-            seed=args.seed,
-            data_dir=args.data_dir,
-            cache_dir=args.cache_dir,
-        )
-        train_datasets.append(train_dataset)
-
-    if args.few_shot:
-        assert len(args.train_on) == 1
-        assert len(args.eval_on) == 1
-        train_dataset = train_datasets[0]
-        train_dataset, eval_dataset = train_dataset.split(
-            train_negative_examples=args.negative_examples
-        )
-        return train_dataset, {args.eval_on[0]: eval_dataset}
-
-    train_dataset = data_utils.GenericDatasets(train_datasets)
-    eval_datasets = {}
-    for dataset in args.eval_on:
-        eval_datasets[dataset] = data_utils.load_dataset(
-            dataset,
-            "dev",
-            tokenizer,
-            max_examples=args.max_dev_examples,
-            negative_examples=True,
-            overwrite_cache=args.overwrite_cache,
-            seed=args.seed,
-            data_dir=args.data_dir,
-            cache_dir=args.cache_dir,
-        )
-    return train_dataset, eval_datasets
-
-
 def run_one(args, seed, multi_seed=False):
     logger.info(f"run one: s{seed}")
     set_seed(seed)
