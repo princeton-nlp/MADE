@@ -1,0 +1,7 @@
+*.pyc
+*~
+*#
+cache
+data
+output
+src.egg-info/*
