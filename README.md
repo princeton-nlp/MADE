@@ -2,7 +2,7 @@
 
 This repository contains the implementation of MADE
 (**M**ulti-**a**dapter **d**ataset **e**xperts), which is described in
-the paper Single-dataset Experts for Multi-dataset QA.
+the paper [Single-dataset Experts for Multi-dataset Question Answering](https://arxiv.org/pdf/2109.13880.pdf).
 
 MADE combines a shared Transformer with a collection of adapters that are specialized to different reading comprehension datasets. See our paper for details.
 
